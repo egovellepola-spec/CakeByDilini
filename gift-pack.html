@@ -1,0 +1,1195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gift Packages | Cake By Dilini</title>
+
+    <meta name="description"
+          content="Beautiful gift packages by Cake By Dilini. Sweet and thoughtful gifts made for birthdays, celebrations and special moments.">
+
+    <link rel="stylesheet"
+          href="gift-pack.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- =========================================
+         GIFT IMAGE VIEWER CSS
+    ========================================== -->
+
+    <style>
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(20, 10, 12, 0.94);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+
+            .image-modal.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+
+        .gift-modal-image {
+            display: block;
+            max-width: min(90vw, 1100px);
+            max-height: 86vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+            transform: scale(0.94);
+            transition: transform 0.3s ease;
+        }
+
+
+        .image-modal.active .gift-modal-image {
+            transform: scale(1);
+        }
+
+
+        .gift-modal-close,
+        .gift-modal-prev,
+        .gift-modal-next {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+
+            .gift-modal-close:hover,
+            .gift-modal-prev:hover,
+            .gift-modal-next:hover {
+                background: rgba(255, 255, 255, 0.22);
+                transform: scale(1.08);
+            }
+
+
+        .gift-modal-close {
+            top: 25px;
+            right: 25px;
+            z-index: 3;
+        }
+
+
+        .gift-modal-prev {
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        .gift-modal-next {
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+            .gift-modal-prev:hover,
+            .gift-modal-next:hover {
+                transform: translateY(-50%) scale(1.08);
+            }
+
+
+        .gift-gallery-item {
+            cursor: zoom-in;
+        }
+
+
+        @media (max-width: 700px) {
+
+            .image-modal {
+                padding: 15px;
+            }
+
+
+            .gift-modal-image {
+                max-width: 94vw;
+                max-height: 78vh;
+                border-radius: 12px;
+            }
+
+
+            .gift-modal-close,
+            .gift-modal-prev,
+            .gift-modal-next {
+                width: 42px;
+                height: 42px;
+                font-size: 17px;
+            }
+
+
+            .gift-modal-close {
+                top: 15px;
+                right: 15px;
+            }
+
+
+            .gift-modal-prev {
+                left: 12px;
+            }
+
+
+            .gift-modal-next {
+                right: 12px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <a href="index.html"
+               class="brand">
+
+                <img src="images/LOGO.jpg"
+                     alt="Cake By Dilini Logo">
+
+                <div class="brand-text">
+
+                    <span>Cake By</span>
+
+                    <strong>Dilini</strong>
+
+                </div>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#cakes">
+                    Cakes
+                </a>
+
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a href="https://wa.me/94769206097"
+               class="header-order"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Order Now
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="gift-hero">
+
+        <div class="container gift-hero-grid">
+
+
+            <div class="gift-hero-content">
+
+                <span class="hero-label">
+                    GIFT PACKAGES
+                </span>
+
+
+                <h1>
+
+                    Sweet Gifts,
+
+                    <span>
+                        Made With Love
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Beautiful gift packages carefully prepared
+                    to make birthdays, celebrations and special
+                    moments even more memorable.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+
+                    <a href="https://wa.me/94769206097?text=Hi%20Cake%20By%20Dilini%2C%20I%20would%20like%20to%20order%20a%20gift%20package."
+                       class="btn btn-primary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Order on WhatsApp
+
+                    </a>
+
+
+                    <a href="#gift-packages"
+                       class="btn btn-outline">
+
+                        View Gift Packages
+
+                        <i class="fa-solid fa-arrow-down"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-features">
+
+
+                    <div>
+
+                        <strong>
+                            Beautiful Gifts
+                        </strong>
+
+                        <span>
+                            Carefully prepared
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Made With Love
+                        </strong>
+
+                        <span>
+                            Specially selected
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Local Delivery
+                        </strong>
+
+                        <span>
+                            Selected areas
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="gift-hero-image">
+
+                <div class="hero-image-frame">
+
+                    <img src="images/Gift Pack/1g.jpg"
+                         alt="Gift Package">
+
+                </div>
+
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-gift"></i>
+
+                    <strong>
+                        Sweet
+                    </strong>
+
+                    <span>
+                        Gifts
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GIFT PACKAGES
+    ========================================== -->
+
+    <section class="cakes-section"
+             id="gift-packages">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    GIFT PACKAGES
+                </span>
+
+                <h2>
+                    Our Gift Collection
+                </h2>
+
+                <p>
+                    Thoughtful and beautiful gift packages
+                    for someone special.
+                </p>
+
+            </div>
+
+
+
+            <div class="gift-gallery">
+
+
+                <!-- 01 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/1g.jpg"
+                         alt="Gift Package 1">
+
+                </div>
+
+
+                <!-- 02 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/2g.jpg"
+                         alt="Gift Package 2">
+
+                </div>
+
+
+                <!-- 03 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/3g.jpg"
+                         alt="Gift Package 3">
+
+                </div>
+
+
+                <!-- 04 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/4g.jpg"
+                         alt="Gift Package 4">
+
+                </div>
+
+
+                <!-- 05 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/5g.jpg"
+                         alt="Gift Package 5">
+
+                </div>
+
+
+                <!-- 06 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/6g.jpg"
+                         alt="Gift Package 6">
+
+                </div>
+
+
+                <!-- 07 -->
+
+                <div class="gift-gallery-item">
+
+                    <img src="images/Gift Pack/7g.jpg"
+                         alt="Gift Package 7">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         IMAGE VIEWER
+    ========================================== -->
+
+    <div class="image-modal"
+         id="giftImageModal">
+
+
+        <button class="gift-modal-close"
+                id="giftModalClose"
+                aria-label="Close">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <button class="gift-modal-prev"
+                id="giftModalPrev"
+                aria-label="Previous Image">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <img class="gift-modal-image"
+             id="giftModalImage"
+             src=""
+             alt="Gift Package">
+
+
+        <button class="gift-modal-next"
+                id="giftModalNext"
+                aria-label="Next Image">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CUSTOM GIFT CTA
+    ========================================== -->
+
+    <section class="custom-section">
+
+        <div class="container">
+
+            <div class="custom-box">
+
+
+                <span>
+                    WANT SOMETHING SPECIAL?
+                </span>
+
+
+                <h2>
+                    Create A Gift
+                    They Will Remember
+                </h2>
+
+
+                <p>
+
+                    Tell us who the gift is for,
+                    your preferred style and your
+                    celebration date.
+
+                </p>
+
+
+                <a href="https://wa.me/94769206097?text=Hi%20Cake%20By%20Dilini%2C%20I%20would%20like%20to%20create%20a%20special%20gift%20package."
+                   class="btn btn-light"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Talk to Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+
+        <div class="container footer-top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    Cake By Dilini
+                </a>
+
+                <p>
+
+                    Beautiful cakes and thoughtful
+                    gifts made with love for your
+                    special moments.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="#gift-packages">
+                    Gift Packages
+                </a>
+
+
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- ORDER -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Order
+                </h3>
+
+
+                <a href="#gift-packages">
+                    Gift Packages
+                </a>
+
+
+                <a href="birthday-cakes.html">
+                    Birthday Cakes
+                </a>
+
+
+                <a href="wedding-cakes.html">
+                    Wedding Cakes
+                </a>
+
+
+                <a href="tel:+94769206097">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call Us
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FOLLOW US -->
+
+            <div class="footer-links footer-social">
+
+                <h3>
+                    Follow Us
+                </h3>
+
+
+                <div class="social-buttons">
+
+
+                    <!-- FACEBOOK -->
+
+                    <a href="https://www.facebook.com/CakeGiftbyDIL"
+                       class="social-btn facebook"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <!-- TIKTOK -->
+
+                    <a href="https://www.tiktok.com/@cake.by.dilini"
+                       class="social-btn tiktok"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </a>
+
+
+                    <!-- YOUTUBE -->
+
+                    <a href="https://youtube.com/@cakebydilini"
+                       class="social-btn youtube"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
+
+                    <a href="https://wa.me/94769206097"
+                       class="social-btn whatsapp"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container footer-bottom">
+
+            <p>
+
+                © 2026 Cake By Dilini.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         GIFT IMAGE VIEWER JAVASCRIPT
+    ========================================== -->
+
+    <script>document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =====================================
+                   GALLERY IMAGES
+                ===================================== */
+
+                /** @type {NodeListOf<HTMLImageElement>} */
+
+                const galleryImages =
+                    document.querySelectorAll(
+                        ".gift-gallery-item img"
+                    );
+
+
+                /* =====================================
+                   MODAL ELEMENTS
+                ===================================== */
+
+                /** @type {HTMLElement | null} */
+
+                const modalElement =
+                    document.getElementById(
+                        "giftImageModal"
+                    );
+
+
+                /** @type {HTMLImageElement | null} */
+
+                const modalImageElement =
+                    document.getElementById(
+                        "giftModalImage"
+                    );
+
+
+                const closeButton =
+                    document.getElementById(
+                        "giftModalClose"
+                    );
+
+
+                const previousButton =
+                    document.getElementById(
+                        "giftModalPrev"
+                    );
+
+
+                const nextButton =
+                    document.getElementById(
+                        "giftModalNext"
+                    );
+
+
+                /* =====================================
+                   SAFETY CHECK
+                ===================================== */
+
+                if (
+                    modalElement === null ||
+                    modalImageElement === null
+                ) {
+
+                    return;
+
+                }
+
+
+                const giftModal =
+                    modalElement;
+
+
+                const giftModalImage =
+                    modalImageElement;
+
+
+                /* =====================================
+                   CURRENT IMAGE
+                ===================================== */
+
+                let currentIndex = 0;
+
+
+                /* =====================================
+                   OPEN IMAGE
+                ===================================== */
+
+                /**
+                 * @param {number} index
+                 */
+
+                function openImage(index) {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        index < 0 ||
+                        index >= galleryImages.length
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex = index;
+
+
+                    const image =
+                        galleryImages[currentIndex];
+
+
+                    if (image === undefined) {
+
+                        return;
+
+                    }
+
+
+                    const source =
+                        image.getAttribute("src");
+
+
+                    const alt =
+                        image.getAttribute("alt");
+
+
+                    if (source === null) {
+
+                        return;
+
+                    }
+
+
+                    giftModalImage.setAttribute(
+                        "src",
+                        source
+                    );
+
+
+                    giftModalImage.setAttribute(
+                        "alt",
+                        alt || "Gift Package"
+                    );
+
+
+                    giftModal.classList.add(
+                        "active"
+                    );
+
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+
+
+                /* =====================================
+                   CLOSE IMAGE
+                ===================================== */
+
+                function closeImage() {
+
+                    giftModal.classList.remove(
+                        "active"
+                    );
+
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+
+                /* =====================================
+                   NEXT IMAGE
+                ===================================== */
+
+                function nextImage() {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex++;
+
+
+                    if (
+                        currentIndex >=
+                        galleryImages.length
+                    ) {
+
+                        currentIndex = 0;
+
+                    }
+
+
+                    openImage(currentIndex);
+
+                }
+
+
+                /* =====================================
+                   PREVIOUS IMAGE
+                ===================================== */
+
+                function previousImage() {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex--;
+
+
+                    if (currentIndex < 0) {
+
+                        currentIndex =
+                            galleryImages.length - 1;
+
+                    }
+
+
+                    openImage(currentIndex);
+
+                }
+
+
+                /* =====================================
+                   IMAGE CLICK
+                ===================================== */
+
+                galleryImages.forEach(
+                    function (
+                        image,
+                        index
+                    ) {
+
+                        image.addEventListener(
+                            "click",
+                            function () {
+
+                                openImage(index);
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   CLOSE BUTTON
+                ===================================== */
+
+                if (
+                    closeButton !== null
+                ) {
+
+                    closeButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            closeImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   NEXT BUTTON
+                ===================================== */
+
+                if (
+                    nextButton !== null
+                ) {
+
+                    nextButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            nextImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   PREVIOUS BUTTON
+                ===================================== */
+
+                if (
+                    previousButton !== null
+                ) {
+
+                    previousButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            previousImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   CLICK OUTSIDE
+                ===================================== */
+
+                giftModal.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (
+                            event.target ===
+                            giftModal
+                        ) {
+
+                            closeImage();
+
+                        }
+
+                    }
+                );
+
+
+                /* =====================================
+                   KEYBOARD CONTROLS
+                ===================================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+
+                        if (
+                            !giftModal.classList.contains(
+                                "active"
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /* ESC */
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            closeImage();
+
+                        }
+
+
+                        /* RIGHT */
+
+                        else if (
+                            event.key === "ArrowRight"
+                        ) {
+
+                            nextImage();
+
+                        }
+
+
+                        /* LEFT */
+
+                        else if (
+                            event.key === "ArrowLeft"
+                        ) {
+
+                            previousImage();
+
+                        }
+
+                    }
+                );
+
+            }
+        );</script>
+
+
+</body>
+
+</html>

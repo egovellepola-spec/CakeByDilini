@@ -1,0 +1,1138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cupcakes | Cake By Dilini</title>
+
+    <meta name="description"
+          content="Beautiful homemade cupcakes by Cake By Dilini. Fresh, colourful and delicious cupcakes made for every special occasion.">
+
+    <link rel="stylesheet" href="cupcakes.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- =========================================
+         CUPCAKE IMAGE VIEWER CSS
+    ========================================== -->
+
+    <style>
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(20, 10, 12, 0.94);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+
+            .image-modal.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+
+        .cupcake-modal-image {
+            display: block;
+            max-width: min(90vw, 1100px);
+            max-height: 86vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+            transform: scale(0.94);
+            transition: transform 0.3s ease;
+        }
+
+
+        .image-modal.active .cupcake-modal-image {
+            transform: scale(1);
+        }
+
+
+        .cupcake-modal-close,
+        .cupcake-modal-prev,
+        .cupcake-modal-next {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+
+            .cupcake-modal-close:hover,
+            .cupcake-modal-prev:hover,
+            .cupcake-modal-next:hover {
+                background: rgba(255, 255, 255, 0.22);
+                transform: scale(1.08);
+            }
+
+
+        .cupcake-modal-close {
+            top: 25px;
+            right: 25px;
+            z-index: 3;
+        }
+
+
+        .cupcake-modal-prev {
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        .cupcake-modal-next {
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+            .cupcake-modal-prev:hover,
+            .cupcake-modal-next:hover {
+                transform: translateY(-50%) scale(1.08);
+            }
+
+
+        .cupcake-gallery-item {
+            cursor: zoom-in;
+        }
+
+
+        @media (max-width: 700px) {
+
+            .image-modal {
+                padding: 15px;
+            }
+
+
+            .cupcake-modal-image {
+                max-width: 94vw;
+                max-height: 78vh;
+                border-radius: 12px;
+            }
+
+
+            .cupcake-modal-close,
+            .cupcake-modal-prev,
+            .cupcake-modal-next {
+                width: 42px;
+                height: 42px;
+                font-size: 17px;
+            }
+
+
+            .cupcake-modal-close {
+                top: 15px;
+                right: 15px;
+            }
+
+
+            .cupcake-modal-prev {
+                left: 12px;
+            }
+
+
+            .cupcake-modal-next {
+                right: 12px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <a href="index.html" class="brand">
+
+                <img src="images/LOGO.jpg"
+                     alt="Cake By Dilini Logo">
+
+                <div class="brand-text">
+
+                    <span>Cake By</span>
+
+                    <strong>Dilini</strong>
+
+                </div>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#cakes">
+                    Cakes
+                </a>
+
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a href="https://wa.me/94769206097"
+               class="header-order"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Order Now
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="cupcake-hero">
+
+        <div class="container cupcake-hero-grid">
+
+
+            <div class="cupcake-hero-content">
+
+                <span class="hero-label">
+                    CUPCAKES
+                </span>
+
+
+                <h1>
+
+                    Little Cakes,
+
+                    <span>
+                        Big Happiness
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Beautifully decorated cupcakes made with love,
+                    perfect for birthdays, parties, gifts and
+                    every sweet celebration.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+
+                    <a href="https://wa.me/94769206097?text=Hi%20Cake%20By%20Dilini%2C%20I%20would%20like%20to%20order%20cupcakes."
+                       class="btn btn-primary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Order on WhatsApp
+
+                    </a>
+
+
+                    <a href="#cupcakes"
+                       class="btn btn-outline">
+
+                        View Cupcakes
+
+                        <i class="fa-solid fa-arrow-down"></i>
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="hero-features">
+
+
+                    <div>
+
+                        <strong>
+                            Freshly Made
+                        </strong>
+
+                        <span>
+                            Made with care
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Beautiful Designs
+                        </strong>
+
+                        <span>
+                            Colourful & sweet
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Local Delivery
+                        </strong>
+
+                        <span>
+                            Selected areas
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cupcake-hero-image">
+
+                <div class="hero-image-frame">
+
+                    <img src="images/cup cake/c1.jpg"
+                         alt="Beautiful Cupcakes">
+
+                </div>
+
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    <strong>
+                        Sweet
+                    </strong>
+
+                    <span>
+                        Treats
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CUPCAKE GALLERY
+    ========================================== -->
+
+    <section class="cakes-section"
+             id="cupcakes">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    CUPCAKES
+                </span>
+
+                <h2>
+                    Our Cupcake Collection
+                </h2>
+
+                <p>
+                    Delicious and beautifully decorated cupcakes
+                    for every special occasion.
+                </p>
+
+            </div>
+
+
+
+            <div class="cupcake-gallery">
+
+
+                <!-- CUPCAKE 01 -->
+
+                <div class="cupcake-gallery-item">
+
+                    <img src="images/cup cake/c1.jpg"
+                         alt="Cupcakes">
+
+                </div>
+
+
+                <!-- CUPCAKE 02 -->
+
+                <div class="cupcake-gallery-item">
+
+                    <img src="images/cup cake/c2.jpg"
+                         alt="Colourful Cupcakes">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         IMAGE VIEWER
+    ========================================== -->
+
+    <div class="image-modal"
+         id="cupcakeImageModal">
+
+
+        <button class="cupcake-modal-close"
+                id="cupcakeModalClose"
+                aria-label="Close">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <button class="cupcake-modal-prev"
+                id="cupcakeModalPrev"
+                aria-label="Previous Image">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <img class="cupcake-modal-image"
+             id="cupcakeModalImage"
+             src=""
+             alt="Cupcake">
+
+
+        <button class="cupcake-modal-next"
+                id="cupcakeModalNext"
+                aria-label="Next Image">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CUSTOM CUPCAKE CTA
+    ========================================== -->
+
+    <section class="custom-section">
+
+        <div class="container">
+
+            <div class="custom-box">
+
+
+                <span>
+                    HAVE A SPECIAL IDEA?
+                </span>
+
+
+                <h2>
+                    Let's Create Your
+                    Perfect Cupcakes
+                </h2>
+
+
+                <p>
+                    Tell us your preferred design, colours,
+                    quantity and celebration date.
+                </p>
+
+
+                <a href="https://wa.me/94769206097?text=Hi%20Cake%20By%20Dilini%2C%20I%20would%20like%20to%20order%20custom%20cupcakes."
+                   class="btn btn-light"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Talk to Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+
+        <div class="container footer-top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    Cake By Dilini
+                </a>
+
+                <p>
+                    Beautiful cakes and sweet treats made
+                    with love for your special moments.
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="#cupcakes">
+                    Cupcakes
+                </a>
+
+
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- ORDER -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Order
+                </h3>
+
+
+                <a href="#cupcakes">
+                    Cupcakes
+                </a>
+
+
+                <a href="birthday-cakes.html">
+                    Birthday Cakes
+                </a>
+
+
+                <a href="wedding-cakes.html">
+                    Wedding Cakes
+                </a>
+
+
+                <a href="tel:+94769206097">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call Us
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FOLLOW US -->
+
+            <div class="footer-links footer-social">
+
+                <h3>
+                    Follow Us
+                </h3>
+
+
+                <div class="social-buttons">
+
+
+                    <!-- FACEBOOK -->
+
+                    <a href="https://www.facebook.com/CakeGiftbyDIL"
+                       class="social-btn facebook"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+
+                    <!-- TIKTOK -->
+
+                    <a href="https://www.tiktok.com/@cake.by.dilini"
+                       class="social-btn tiktok"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </a>
+
+
+
+                    <!-- YOUTUBE -->
+
+                    <a href="https://youtube.com/@cakebydilini"
+                       class="social-btn youtube"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <a href="https://wa.me/94769206097"
+                       class="social-btn whatsapp"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 Cake By Dilini.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         CUPCAKE GALLERY JAVASCRIPT
+    ========================================== -->
+
+    <script>document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =====================================
+                   GALLERY IMAGES
+                ===================================== */
+
+                /** @type {NodeListOf<HTMLImageElement>} */
+
+                const galleryImages =
+                    document.querySelectorAll(
+                        ".cupcake-gallery-item img"
+                    );
+
+
+                /* =====================================
+                   MODAL
+                ===================================== */
+
+                /** @type {HTMLElement | null} */
+
+                const modalElement =
+                    document.getElementById(
+                        "cupcakeImageModal"
+                    );
+
+
+                /** @type {HTMLImageElement | null} */
+
+                const modalImageElement =
+                    document.getElementById(
+                        "cupcakeModalImage"
+                    );
+
+
+                const closeButton =
+                    document.getElementById(
+                        "cupcakeModalClose"
+                    );
+
+
+                const previousButton =
+                    document.getElementById(
+                        "cupcakeModalPrev"
+                    );
+
+
+                const nextButton =
+                    document.getElementById(
+                        "cupcakeModalNext"
+                    );
+
+
+                /* =====================================
+                   SAFETY CHECK
+                ===================================== */
+
+                if (
+                    modalElement === null ||
+                    modalImageElement === null
+                ) {
+
+                    return;
+
+                }
+
+
+                const cupcakeModal =
+                    modalElement;
+
+
+                const cupcakeModalImage =
+                    modalImageElement;
+
+
+                /* =====================================
+                   CURRENT IMAGE
+                ===================================== */
+
+                let currentIndex = 0;
+
+
+                /* =====================================
+                   OPEN IMAGE
+                ===================================== */
+
+                /**
+                 * @param {number} index
+                 */
+
+                function openImage(index) {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        index < 0 ||
+                        index >= galleryImages.length
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex = index;
+
+
+                    const image =
+                        galleryImages[currentIndex];
+
+
+                    if (image === undefined) {
+
+                        return;
+
+                    }
+
+
+                    const source =
+                        image.getAttribute("src");
+
+
+                    const alt =
+                        image.getAttribute("alt");
+
+
+                    if (source === null) {
+
+                        return;
+
+                    }
+
+
+                    cupcakeModalImage.setAttribute(
+                        "src",
+                        source
+                    );
+
+
+                    cupcakeModalImage.setAttribute(
+                        "alt",
+                        alt || "Cupcake"
+                    );
+
+
+                    cupcakeModal.classList.add(
+                        "active"
+                    );
+
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+
+
+                /* =====================================
+                   CLOSE
+                ===================================== */
+
+                function closeImage() {
+
+                    cupcakeModal.classList.remove(
+                        "active"
+                    );
+
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+
+                /* =====================================
+                   NEXT
+                ===================================== */
+
+                function nextImage() {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex++;
+
+
+                    if (
+                        currentIndex >=
+                        galleryImages.length
+                    ) {
+
+                        currentIndex = 0;
+
+                    }
+
+
+                    openImage(currentIndex);
+
+                }
+
+
+                /* =====================================
+                   PREVIOUS
+                ===================================== */
+
+                function previousImage() {
+
+                    if (
+                        galleryImages.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentIndex--;
+
+
+                    if (currentIndex < 0) {
+
+                        currentIndex =
+                            galleryImages.length - 1;
+
+                    }
+
+
+                    openImage(currentIndex);
+
+                }
+
+
+                /* =====================================
+                   IMAGE CLICK
+                ===================================== */
+
+                galleryImages.forEach(
+                    function (
+                        image,
+                        index
+                    ) {
+
+                        image.addEventListener(
+                            "click",
+                            function () {
+
+                                openImage(index);
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   CLOSE BUTTON
+                ===================================== */
+
+                if (
+                    closeButton !== null
+                ) {
+
+                    closeButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            closeImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   NEXT BUTTON
+                ===================================== */
+
+                if (
+                    nextButton !== null
+                ) {
+
+                    nextButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            nextImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   PREVIOUS BUTTON
+                ===================================== */
+
+                if (
+                    previousButton !== null
+                ) {
+
+                    previousButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+                            previousImage();
+
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   CLICK OUTSIDE
+                ===================================== */
+
+                cupcakeModal.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (
+                            event.target ===
+                            cupcakeModal
+                        ) {
+
+                            closeImage();
+
+                        }
+
+                    }
+                );
+
+
+                /* =====================================
+                   KEYBOARD
+                ===================================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+
+                        if (
+                            !cupcakeModal.classList.contains(
+                                "active"
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /* ESC */
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            closeImage();
+
+                        }
+
+
+                        /* RIGHT */
+
+                        else if (
+                            event.key === "ArrowRight"
+                        ) {
+
+                            nextImage();
+
+                        }
+
+
+                        /* LEFT */
+
+                        else if (
+                            event.key === "ArrowLeft"
+                        ) {
+
+                            previousImage();
+
+                        }
+
+                    }
+                );
+
+            }
+        );</script>
+
+
+</body>
+
+</html>
