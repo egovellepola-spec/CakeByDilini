@@ -1565,9 +1565,10 @@ a {
    DELIVERY CARD - MOBILE PADDING
 ========================================= */
 
-@media (max-width: 500px) {
 
-    .delivery-card {
-        padding: 10px 10px;
+    @media (max-width: 500px) {
+
+        .delivery-card {
+            padding: 5px 10px;
+        }
     }
-}
