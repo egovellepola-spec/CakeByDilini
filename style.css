@@ -1395,3 +1395,147 @@ a {
         justify-content: center;
     }
 }
+/* =========================================
+   MOBILE HAMBURGER MENU
+========================================= */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--brown);
+    font-size: 19px;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+    .menu-toggle:hover {
+        background: var(--pink);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: block;
+        padding: 0 15px 18px;
+        background: rgba(255, 250, 247, 0.98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 35px rgba(55, 31, 29, 0.10);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+    }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+    /* MOBILE NAV */
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 10px 0;
+    }
+
+        .mobile-nav a {
+            display: block;
+            padding: 12px 15px;
+            border-radius: 12px;
+            color: var(--brown-light);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background .2s ease, color .2s ease;
+        }
+
+            .mobile-nav a:hover {
+                background: var(--rose);
+                color: var(--pink);
+            }
+
+
+    /* MOBILE SOCIAL */
+
+    .mobile-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+    }
+
+        .mobile-social .nav-social-btn {
+            height: 34px;
+            min-width: 34px;
+            padding: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border-radius: 999px;
+            background: rgba(217, 111, 134, 0.10);
+            border: 1px solid rgba(217, 111, 134, 0.18);
+            color: var(--brown-light);
+            font-size: 10px;
+            text-decoration: none;
+        }
+
+            .mobile-social .nav-social-btn span {
+                display: inline;
+            }
+
+            .mobile-social .nav-social-btn:hover {
+                color: #fff;
+            }
+
+        .mobile-social .facebook:hover {
+            background: #1877f2;
+        }
+
+        .mobile-social .tiktok:hover {
+            background: #111;
+        }
+
+        .mobile-social .youtube:hover {
+            background: #ff0000;
+        }
+
+        .mobile-social .whatsapp:hover {
+            background: #25D366;
+        }
+}
