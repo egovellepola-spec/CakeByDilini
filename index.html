@@ -78,14 +78,7 @@
                 </div>
 
             </div>
-            <button class="menu-toggle"
-                    type="button"
-                    aria-label="Open menu"
-                    aria-expanded="false">
 
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
             <div class="mobile-menu">
 
                 <nav class="mobile-nav">
@@ -149,7 +142,14 @@
                rel="noopener noreferrer">
                 Order Now
             </a>
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false">
 
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
         </div>
 
     </header>
@@ -392,7 +392,7 @@
 
 
                         </div>
-                        </a>
+                    </a>
 
 
                 </div>
@@ -1107,7 +1107,7 @@
                            aria-label="Facebook">
 
                             <i class="fa-brands fa-facebook-f"></i>
-                            
+
                         </a>
 
 
@@ -1120,7 +1120,7 @@
                            aria-label="TikTok">
 
                             <i class="fa-brands fa-tiktok"></i>
-                            
+
                         </a>
 
 
@@ -1133,7 +1133,7 @@
                            aria-label="YouTube">
 
                             <i class="fa-brands fa-youtube"></i>
-                            
+
                         </a>
 
 
@@ -1146,7 +1146,7 @@
                            aria-label="WhatsApp">
 
                             <i class="fa-brands fa-whatsapp"></i>
-                            
+
                         </a>
 
                     </div>
@@ -1168,8 +1168,53 @@
         </div>
 
     </footer>
+    <script>
+(function () {
+
+            const menuToggle = document.querySelector(".menu-toggle");
+            const mobileMenu = document.querySelector(".mobile-menu");
+
+            // Elements not found
+            if (!menuToggle || !mobileMenu) {
+                return;
+            }
+
+            // Open / Close menu
+            menuToggle.addEventListener("click", function () {
+
+                const isOpen = mobileMenu.classList.toggle("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuToggle.innerHTML = isOpen
+                    ? '<i class="fa-solid fa-xmark"></i>'
+                    : '<i class="fa-solid fa-bars"></i>';
+            });
 
 
+            // Close menu when a link is clicked
+            document.querySelectorAll(".mobile-nav a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.innerHTML =
+                        '<i class="fa-solid fa-bars"></i>';
+                });
+
+            });
+
+})();
+    </script>
 </body>
 
 </html>
