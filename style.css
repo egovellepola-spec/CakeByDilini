@@ -1566,13 +1566,44 @@ a {
 
 
 /* =========================================
-   DELIVERY CARD - MOBILE PADDING
+   DELIVERY CARDS - MOBILE SPACING
+   Reduces inner white space on small screens.
+   Keeps card width and outer margins unchanged.
 ========================================= */
 
+@media (max-width: 500px) {
+    .delivery-card {
+        min-height: 0;
+        padding: 14px 10px !important;
+        justify-content: center;
+        gap: 0;
+    }
 
-    @media (max-width: 500px) {
+    .delivery-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 7px;
+        font-size: 21px;
+    }
 
-        .delivery-card {
-            padding: 5px 5px;
-        }
+    .delivery-content > span {
+        margin-bottom: 3px;
+        line-height: 1.2;
+    }
+
+    .delivery-content h3 {
+        margin-bottom: 4px;
+        font-size: 19px;
+        line-height: 1.2;
+    }
+
+    .delivery-content p {
+        margin-bottom: 7px;
+        line-height: 1.35;
+    }
+
+    .delivery-content strong {
+        line-height: 1.2;
+    }
+}
     }
