@@ -944,7 +944,7 @@ a {
 
 
 /* =========================================
-   CONTACT
+   CONTACT (SPACING REDUCED)
 ========================================= */
 
 .contact-section {
@@ -959,7 +959,8 @@ a {
 }
 
 .contact-card {
-    min-height: 165px;
+    min-height: auto;
+    padding: 20px 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -978,12 +979,12 @@ a {
 }
 
 .contact-icon {
-    margin-bottom: 9px;
-    font-size: 29px;
+    margin-bottom: 6px;
+    font-size: 26px;
 }
 
 .contact-card h3 {
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     font-family: Georgia, serif;
     font-size: 19px;
 }
